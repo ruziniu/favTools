@@ -1,0 +1,462 @@
+<!doctype html>
+<html ng-app>
+    <head>
+      <meta charset="utf-8">
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>最喜爱的工具</title>
+      <link rel="stylesheet" href="css/css/jqm.css" />
+      <link rel="stylesheet" type="text/css" href="css/css/tools.css" />
+    </head>
+    <body>
+    	<!--首页-->
+      <div data-role="page" id="index">
+        <div data-role="header">
+          <h1>常用工具</h1>
+        </div>
+        <div data-role="content">
+          <ul id="menu" class="clearfix">
+            <li>
+              <a href="#weather" data-transition="slide">
+              <div class="weather"></div>
+              <span>天气</span>
+              </a>
+            </li>
+            <li>
+              <a href="#pm25" data-transition="slide">
+              <div class="pm25"></div>
+              <span>空气质量</span>
+              </a>
+            </li>
+            <li>
+              <a href="#transit" data-transition="flow">
+              <div class="transit"></div>
+              <span>公交</span>
+              </a>
+            </li>
+            <li>
+              <a href="#calc" data-transition="slide">
+                <div class="calc"></div>
+                <span>计算器</span>
+              </a>
+            </li>
+            <li>
+              <a href="#timer" data-transition="slide">
+              <div class="timer"></div>
+              <span>计时器</span>
+              </a>
+            </li>
+            <li>
+              <a href="#unitConverter" data-transition="flow">
+                <div class="unit"></div>
+                <span>单位换算</span>
+              </a>
+            </li>
+            <li>
+              <a href="#standardBody" data-transition="slide">
+                <div class="figure"></div>
+                <span>标准身材</span>
+              </a>
+            </li>
+            <li>
+              <a href="#scanCode" data-transition="slide">
+                <div class="barcode"></div>
+                <span>条码扫描</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+          <h4>作者：<a href="http://weibo.com/newwave">Along</a></h4>
+        </div>
+      </div>
+
+<!--天气-->
+  <div data-role="page" id="weather">
+    <div data-role="header">
+      <h1>天气预报</h1>
+    </div>
+    <div data-role="content">
+      <a href="#" data-role="button" data-inline="true" data-theme="b" id="updateWeather">更新天气</a><span class="loading">更新中...</span>
+      <p id="weatherInfo">非常努力加载中......</p>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+      <h4>Powered by <a href="http://www.weather.com.cn/">中国天气网</a></h4>
+    </div>
+  </div>
+
+<!--PM 2.5-->
+<div data-role="page" id="pm25">
+    <div data-role="header">
+      <h1>空气质量</h1>
+    </div>
+    <div data-role="content">
+    <p class="detail">加载中......</p>          
+    </div>
+    <div data-role="footer" data-position="fixed">
+      <h4>Powered by <a href="http://www.pm25.in/">PM25.in</a></h4>
+    </div>
+</div>
+
+<!--公交-->
+<div data-role="page" id="transit">
+    <div data-role="header">
+      <h1>公交换乘</h1>
+    </div>
+    <div data-role="content">
+
+<div data-role="collapsible-set" data-theme="c" data-content-theme="d">
+    <div data-role="collapsible" data-collapsed="false">
+        <h3>公交换乘</h3>
+        <div id="findWay">
+            <input type="text" placeholder="起点" id="startStop" /><span> 至 </span><input type="text" placeholder="终点" id="endStop" />
+            <select name="select-choice-a" data-native-menu="false">
+              <option value="BMAP_TRANSIT_POLICY_LEAST_TIME">最少时间</option>
+              <option value="BMAP_TRANSIT_POLICY_AVOID_SUBWAYS">不乘地铁</option>
+              <option value="BMAP_TRANSIT_POLICY_LEAST_TRANSFER">最少换乘</option>
+              <option value="BMAP_TRANSIT_POLICY_LEAST_WALKING">最少步行</option>
+            </select>
+            <a href="#" data-role="button" data-theme="b" class="searchWay">找路线</a>  
+        </div>
+    </div>
+    <div data-role="collapsible">
+        <h3>线路查询</h3>
+        <div id="searchLine">
+          <input type="text" class="lineName" placeholder="例如：301" />
+          <a href="#" data-role="button" data-theme="b" class="searchStop">找站点</a>
+        </div>
+    </div>
+</div>      
+        
+<div class="mapResultWrap">
+  <a href="#" data-role="button" id="copySelectedWay" data-inline="true"  data-theme="b">复制选中路线</a>
+  <div id="mapResult"></div>
+</div>
+<div id="baiduMap"></div>
+        
+    </div>
+    <div data-role="footer" data-position="fixed">
+      <h4>Powered by <a href="#">百度地图</a></h4>
+    </div>
+</div>
+
+<!--计算器-->
+<div data-role="page" id="calc">
+  <div data-role="header">
+    <h1>计算器</h1>
+  </div>
+  <div data-role="content">
+    <div id="calcContainer">
+      
+      <div class="result"></div>
+      <!-- <select data-role="slider">
+          <option value="basic">标准</option>
+          <option value="advanced">高级</option>
+      </select> -->
+      <div class="buttons clearfix">
+        <table>
+          <tr>
+            <td><a act="del" href="#">←</a></td>
+            <td><a act="clear" href="#">C</a></td>
+            <td><a href="#">(</a></td>
+            <td><a href="#">)</a></td>
+            <td><a act="percent" href="#">%</a></td>
+          </tr>
+          <tr>
+            <td><a href="#">7</a></td>
+            <td><a href="#">8</a></td>
+            <td><a href="#">9</a></td>
+            <td><a href="#">/</a></td>
+            <td><a act="sqrt" href="#">√</a></td>
+          </tr>
+          <tr>
+            <td><a href="#">4</a></td>
+            <td><a href="#">5</a></td>
+            <td><a href="#">6</a></td>
+            <td><a href="#">*</a></td>
+            <td><a act="reciprocal" href="#">1/x</a></td>
+          </tr>
+          <tr>
+            <td><a href="#">1</a></td>
+            <td><a href="#">2</a></td>
+            <td><a href="#">3</a></td>
+            <td><a href="#">-</a></td>
+            <td><a act="pi" href="#">π</a></td>
+          </tr>
+          <tr>
+            <td><a href="#">0</a></td>
+            <td><a href="#">00</a></td>
+            <td><a href="#">.</a></td>
+            <td><a href="#">+</a></td>
+            <td><a act="eval" href="#">=</a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!--计时器-->
+<div data-role="page" id="timer">
+    <div data-role="header">
+      <h1>计时器</h1>
+    </div>
+    <div data-role="content">
+      <div class="detail">
+          <div class="show">
+            <span class="hour">00</span><span class="dot">:</span><span class="minute">00</span><span class="dot">:</span><span class="second">00</span>
+          </div>
+          <div class="panel">
+            <div class="act">
+              <a href="#" class="pause" data-role="button" data-inline="true"  data-theme="b">暂停</a>
+              <a href="#" class="resume" data-role="button" data-inline="true"  data-theme="b">继续</a>
+            </div>
+            <div data-role="collapsible-set" data-theme="c" data-content-theme="d">
+              <div data-role="collapsible" data-collapsed="false">
+                  <h3>秒表</h3>
+                  <div>
+                    <a href="#" class="timer" data-role="button" data-inline="true" data-theme="b">秒表</a>
+                  </div>
+              </div>
+              <div data-role="collapsible">
+                <h3>倒计时</h3>
+                <div>
+                  <input type="number" class="hour" maxlength='2' />
+                  <span>:</span>
+                  <input class="minute" type="number" maxlength='2' />
+                  <span>:</span>
+                  <input class="second" type="number" maxlength='2' />
+                </div>
+                <a href="#" class="countdown" data-role="button" data-inline="true" data-theme="b">倒计时</a>
+              </div>
+            </div>
+        </div>
+      </div>          
+    </div>
+</div>
+
+<!--标准身材-->
+<div data-role="page" id="standardBody">
+  <div data-role="header">
+    <h1>标准身材</h1>
+  </div>
+  <div data-role="content">
+      <div data-role="collapsible-set" data-theme="c" data-content-theme="d">
+        <div data-role="collapsible" data-collapsed="false">
+          <h3>身高体重指数（BMI）</h3>
+          <ul>
+            <li>您的身高：<input type="number" class="height" maxlength="3" />（厘米/cm）</li>
+            <li>您的体重：<input type="number" class="weight" maxlength="3" />（公斤/kg）</li>
+            <li class="gender">
+              <fieldset data-role="controlgroup" data-type="horizontal">
+                  <input type="radio" name="gender" id="male" value="1" checked="checked">
+                  <label for="male">男</label>
+                  <input type="radio" name="gender" id="female" value="0">
+                  <label for="female">女</label>
+              </fieldset>
+            </li>
+            <li><a href="#" data-role="button" data-inline="true" class="calc"  data-theme="b">计算</a></li>
+            <li class="result">
+              <ul>
+                <li class="bmi">您的体质指数（BMI）：<span></span>（kg/m2）（18.5～23.9为正常范围）</li>
+                <li class="perfectWeight">您的理想体重是：<span></span> 公斤</li>
+                <li class="note">您的身体状况：<span></span></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+  </div>
+</div>
+
+<!--二维码-->
+<div data-role="page" id="scanCode">
+    <div data-role="header">
+      <h1>二维码扫描</h1>
+    </div>
+    <div data-role="content">
+      <h3>条码数据</h3>
+      <div id="codeContent"></div>
+      <a href="#" data-role="button" data-inline="true" id="scanCodeBtn" data-theme="b">开始扫描</a>
+    </div>
+</div>
+
+<!--单位换算-->
+<div data-role="page" id="unitConverter">
+    <div data-role="header">
+      <h1>单位换算</h1>
+    </div>
+    <div data-role="content">
+
+    <div data-role="collapsible-set" data-theme="c" data-content-theme="d">
+      <div data-role="collapsible" data-collapsed="false">
+        <h3>长度</h3>
+        <ul class="length">
+          <li>
+            <input class="num" value='1' type="number" />
+            <select class="unit">
+              <option value="gongli">公里</option>
+              <option value="li">里</option>
+              <option value="yingchi">英尺</option>
+              <option value="yingcu">英寸</option>
+              <option value="yingli">英里</option>
+              <option value="haili">海里</option>
+              <option value="ma">码</option>
+              <option value="mi">米</option>
+              <option value="fenmi">分米</option>
+              <option value="limi">厘米</option>
+              <option value="haomi">毫米</option>
+              <option value="weimi">微米</option>
+              <option value="nami">纳米</option>
+              <option value="zhang">丈</option>
+              <option value="chi">尺</option>
+              <option value="cun">寸</option>
+            </select>
+            <a href="#" class="calc" data-role="button" data-inline="true" data-theme="b">换算</a>
+            <span class="result"></span>
+            <select class="toUnit">
+              <option value="gongli">公里</option>
+              <option value="li" selected>里</option>
+              <option value="yingchi">英尺</option>
+              <option value="yingcu">英寸</option>
+              <option value="yingli">英里</option>
+              <option value="haili">海里</option>
+              <option value="ma">码</option>
+              <option value="mi">米</option>
+              <option value="fenmi">分米</option>
+              <option value="limi">厘米</option>
+              <option value="haomi">毫米</option>
+              <option value="weimi">微米</option>
+              <option value="nami">纳米</option>
+              <option value="zhang">丈</option>
+              <option value="chi">尺</option>
+              <option value="cun">寸</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+      <div data-role="collapsible">
+        <h3>面积</h3>
+        <ul class="area">
+          <li>
+            <input class="num" value='1' type="number" />
+            <select class="unit">
+              <option value="">平方公里</option>
+              <option value="">平方米</option>
+              <option value="">公顷</option>
+              <option value="">亩</option>
+              <option value="">平方厘米</option>
+              <option value="">平方英里</option>
+              <option value="">平方竿</option>
+              <option value="">平方英尺</option>
+            </select>
+            <a href="#" class="calc" data-role="button" data-inline="true" data-theme="b">换算</a>
+            <span class="result"></span>
+            <select class="toUnit">
+              <option value="">平方公里</option>
+              <option value="" selected>平方米</option>
+              <option value="">公顷</option>
+              <option value="">亩</option>
+              <option value="">平方厘米</option>
+              <option value="">平方英里</option>
+              <option value="">平方竿</option>
+              <option value="">平方英尺</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+      <div data-role="collapsible">
+        <h3>体积和容量</h3>
+        <ul class="vol">
+          <li>
+            <input class="num" value='1' type="number" />
+            <select class="unit">
+              <option value="">立方米</option>
+              <option value="">立方厘米</option>
+              <option value="" selected>升</option>
+              <option value="">毫升</option>
+              <option value="">夸脱</option>
+              <option value="">品脱</option>
+              <option value="">配克</option>
+              <option value="">液体盎司</option>
+            </select>
+            <a href="#" class="calc" data-role="button" data-inline="true" data-theme="b">换算</a>
+            <span class="result"></span>
+            <select class="toUnit">
+              <option value="">立方米</option>
+              <option value="">立方厘米</option>
+              <option value="">升</option>
+              <option value="" selected>毫升</option>
+              <option value="">夸脱</option>
+              <option value="">品脱</option>
+              <option value="">配克</option>
+              <option value="">液体盎司</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+      <div data-role="collapsible">
+        <h3>重量</h3>
+        <ul class="weight">
+          <li>
+            <input class="num" value='1' type="number" />
+            <select class="unit">
+              <option value="">吨</option>
+              <option value="" selected>公斤</option>
+              <option value="">千克</option>
+              <option value="">克</option>
+              <option value="">毫克</option>
+              <option value="">斤</option>
+              <option value="">两</option>
+              <option value="">钱</option>
+              <option value="">磅</option>
+              <option value="">盎司</option>
+            </select>
+            <a href="#" class="calc" data-role="button" data-inline="true" data-theme="b">换算</a>
+            <span class="result"></span>
+            <select class="toUnit">
+              <option value="">吨</option>
+              <option value="">公斤</option>
+              <option value="">千克</option>
+              <option value="">克</option>
+              <option value="">毫克</option>
+              <option value="" selected>斤</option>
+              <option value="">两</option>
+              <option value="">钱</option>
+              <option value="">磅</option>
+              <option value="">盎司</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+      <div data-role="collapsible">
+        <h3>其它</h3>
+        <ul class="temperature">
+          <li>
+            1 摄氏度 = 33.8 华氏度
+          </li>
+          <li>
+            1 标准大气压 = 101325 帕斯卡
+          </li>
+          <li>
+            1 标准大气压 = 760 毫米汞柱
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+
+    </div>
+</div>
+
+    </body>
+<script type="text/javascript" src="js/js/jquery.js"></script>
+<script type="text/javascript" src="js/js/jqm.js"></script>
+<!--baidu map api-->
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=942b169d30c519920a3ac24b4cd173af"></script>
+<script type="text/javascript" src="js/js/city.js"></script>
+<script type="text/javascript" src="js/js/tools.js"></script>
+</html>

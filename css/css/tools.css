@@ -1,0 +1,145 @@
+/*body{font-size: 16px;}*/
+/*index*/
+#menu{margin: 0;padding: 0;}
+#menu li{list-style: none; margin: 0;padding: 0; width: 50%; float: left; position: relative;}
+#menu li a{text-decoration: none; text-align: center; display: block; height: 4em;margin: 0.5em;
+font-size: 1em; color: #fff; font-weight: normal;}
+
+#menu li a{background-color: #00a300; padding: 0.5em 0;}
+#menu li div{width: 100%;height: 3em; background-position: center center; background-repeat: no-repeat; background-size: contain;}
+#menu li .weather{ background-image:url('../img/index/weather.png'); }
+#menu li .pm25{background-image:url('../img/index/pm25.png');}
+#menu li .transit{background-image:url('../img/index/bus.png');}
+#menu li .calc{background-image:url('../img/index/calc.png');}
+#menu li .timer{background-image:url('../img/index/timer.png');}
+#menu li .unit{background-image:url('../img/index/unit.png');}
+#menu li .figure{background-image:url('../img/index/figure.png');}
+#menu li .barcode{background-image:url('../img/index/code.png');}
+
+/*jqm css*/
+.ui-header .ui-title, .ui-footer .ui-title{font-size: 1em; }
+input.ui-input-text, textarea.ui-input-text{font-size: 1em;}
+.ui-btn-inner{font-size: 1em;}
+h3.ui-collapsible-heading{font-size:1em;}
+
+.palette-green-sea {
+background-color: #16a085;
+}
+.palette-nephritis {
+background-color: #27ae60;
+}
+.palette-belize-hole {
+background-color: #2980b9;
+}
+.palette-wisteria {
+background-color: #8e44ad;
+}
+.palette-midnight-blue {
+background-color: #2c3e50;
+}
+.palette-orange {
+background-color: #f39c12;
+}
+.palette-pumpkin {
+background-color: #d35400;
+}
+.palette-pomegranate {
+background-color: #c0392b;
+}
+.palette-silver {
+background-color: #bdc3c7;
+}
+.palette-asbestos {
+background-color: #7f8c8d;
+}
+
+
+/*weather*/
+#weather .loading{display: none; color: #3498DB;}
+#weatherInfo{font-size: 1em;}
+#updateWeather{color:#fff; font-size: 1em;}
+#weatherInfo div{margin: 10px 0;}
+#weatherInfo .index dt, #weatherInfo .index dd{line-height: 1.5em;}
+#weatherInfo .index dt.col{float: left; width: 50%;}
+/*weather type*/
+#weatherInfo .city{background-size: contain !important; background-color: #16A085 !important; color:#fff; text-align: right;
+padding: 10px 10px 10px 40%;}
+#weatherInfo .sunny{background: url('../img/weather/sunny.png') no-repeat;}
+#weatherInfo .cloudy{background: url('../img/weather/cloudy.png') no-repeat;}
+#weatherInfo .overcast{background: url('../img/weather/overcast.png') no-repeat;}
+#weatherInfo .shower{background: url('../img/weather/shower.png') no-repeat;}
+#weatherInfo .thunder_shower{background: url('../img/weather/thunder_shower.png') no-repeat;}
+#weatherInfo .rain_sleet{background: url('../img/weather/rain_sleet.png') no-repeat;}
+#weatherInfo .sleet{background: url('../img/weather/sleet.png') no-repeat;}
+#weatherInfo .rain_light{background: url('../img/weather/rain_light.png') no-repeat;}
+#weatherInfo .rain_mid{background: url('../img/weather/rain_mid.png') no-repeat;}
+#weatherInfo .rain_large{background: url('../img/weather/rain_large.png') no-repeat;}
+#weatherInfo .rain_heavy{background: url('../img/weather/rain_heavy.png') no-repeat;}
+#weatherInfo .rain_storm{background: url('../img/weather/rain_storm.png') no-repeat;}
+#weatherInfo .rain_big_storm{background: url('../img/weather/rain_big_storm.png') no-repeat;}
+#weatherInfo .snow_shower{background: url('../img/weather/snow_shower.png') no-repeat;}
+#weatherInfo .snow_light{background: url('../img/weather/snow_light.png') no-repeat;}
+#weatherInfo .snow_mid{background: url('../img/weather/snow_mid.png') no-repeat;}
+#weatherInfo .snow_large{background: url('../img/weather/snow_large.png') no-repeat;}
+#weatherInfo .snow_heavy{background: url('../img/weather/snow_heavy.png') no-repeat;}
+#weatherInfo .fog{background: url('../img/weather/fog.png') no-repeat;}
+#weatherInfo .sand_storm{background: url('../img/weather/sand_storm.png') no-repeat;}
+#weatherInfo .dust{background: url('../img/weather/dust.png') no-repeat;}
+#weatherInfo .sand_blowing{background: url('../img/weather/sand_blowing.png') no-repeat;}
+#weatherInfo .sand_storm_big{background: url('../img/weather/sand_storm_big.png') no-repeat;}
+#weatherInfo .haze{background: url('../img/weather/haze.png') no-repeat;}
+#weatherInfo .hail{background: url('../img/weather/hail.png') no-repeat;}
+
+
+#weatherInfo table.trend{width: 100%; border-left:1px solid #2C3E50;}
+#weatherInfo table.trend td{border-right: 1px solid #2C3E50; border-bottom: 1px solid #2C3E50; padding-left: 5px;}
+#weatherInfo table.trend caption{border:1px solid #2C3E50;}
+/*calc*/
+#calcContainer{font-size: 1.5em;}
+#calcContainer .result{border:1px solid #333; padding: 10px; min-height: 1.5em; font-size: 1em; border-radius: 5px; margin-bottom: 0.5em;
+	box-shadow: inset 2px 2px 2px #333;}
+#calcContainer .buttons table{width: 100%;}
+#calcContainer .buttons table td{padding: 4px; }
+#calcContainer .buttons a{text-decoration: none;text-align: center; font-weight: bold; display: block; border:1px solid #999;
+border-radius: 5px; box-shadow: 0px 2px 2px #999; background-color: #ccc; color: #fff; font-size: 2em;}
+
+/*PM2.5*/
+#pm25 .detail dl{overflow: hidden; font-size: 1.5em;}
+#pm25 .detail dt, #pm25 .detail dd{float: left; width: 45%; line-height: 1.5em; text-align: center;}
+#pm25 .detail dt.line, #pm25 .detail dd.line{width: 100%; border:0;}
+#pm25 .detail dd.large{font-size: 1.2em; color: #d35400;}
+#pm25 .detail dt{border-right: 1px dashed #999;}
+#pm25 .detail dd{margin-left: 0;}
+
+/*transit*/
+#baiduMap{min-height:500px;width:100%;border:1px solid #bcbcbc;}
+#mapResult, #transit .mapResultWrap{width:100%;}
+#mapResult table, #mapResult div div span, #mapResult h1{font-size: 2em !important;}
+#mapResult table td{line-height: 1.5em !important;}
+#mapResult div div div{line-height: 1em !important; padding-bottom: 6px !important;}
+#findWay{margin-bottom: 20px;}
+#mapResult dl dt, #mapResult dl dd p{font-size: 2em !important;}
+#copySelectedWay{visibility: hidden;}
+
+/*timer*/
+#timer .detail{text-align: center;}
+#timer div.ui-input-text{display: inline-block; width: 4em;}
+#timer .detail .show{font-size: 4em; display: inline-block; border:2px solid #ccc; border-radius: 5px; padding: 6px; margin-bottom: 0.5em;}
+#timer .detail .show .dot{position: relative; top:-5px;}
+
+/*standardBody*/
+#standardBody ul, #standardBody ul li{list-style: none; margin: 0; padding: 0;}
+#standardBody div.ui-input-text{display: inline-block; width: 4em;}
+#standardBody .result li{line-height: 2em;}
+#standardBody .result li span{font-size: 1.5em; color: #ff8b00;}
+
+/*scan two-dimension code*/
+#codeContent{border:1px solid #ccc; width: 100%; min-height: 4em;}
+
+/*unit converter*/
+#unitConverter .detail{position: relative;}
+#unitConverter ul, #unitConverter ul li{margin: 0; padding: 0; list-style: none;}
+#unitConverter .ui-select, #unitConverter div.ui-input-text{display: inline-block;}
+#unitConverter .num{width: 6em;}
+#unitConverter .result{border:1px solid #ccc; padding: 4px; min-width: 4em; height: 1.5em; line-height: 1.5em; display: inline-block;
+vertical-align: middle;}

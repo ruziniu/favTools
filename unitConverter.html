@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>最喜爱的工具</title>
+  <link rel="stylesheet" href="css/css/jqm.css" />
+  <link rel="stylesheet" type="text/css" href="css/css/tools.css" />
+</head>
+<body>
+<!--单位换算-->
+<div data-role="page" id="unitConverter">
+    <div data-role="header">
+      <h1>单位换算</h1>
+    </div>
+    <div data-role="content">
+
+    <div data-role="collapsible-set" data-theme="c" data-content-theme="d">
+      <div data-role="collapsible" data-collapsed="false">
+        <h3>长度</h3>
+        <ul class="length">
+          <li>
+            <input class="num" value='1' type="number" />
+            <select class="unit">
+              <option value="gongli">公里</option>
+              <option value="li">里</option>
+              <option value="yingchi">英尺</option>
+              <option value="yingcu">英寸</option>
+              <option value="yingli">英里</option>
+              <option value="haili">海里</option>
+              <option value="ma">码</option>
+              <option value="mi">米</option>
+              <option value="fenmi">分米</option>
+              <option value="limi">厘米</option>
+              <option value="haomi">毫米</option>
+              <option value="weimi">微米</option>
+              <option value="nami">纳米</option>
+              <option value="zhang">丈</option>
+              <option value="chi">尺</option>
+              <option value="cun">寸</option>
+            </select>
+            <a href="#" class="calc" data-role="button" data-inline="true" data-theme="b">换算</a>
+            <span class="result"></span>
+            <select class="toUnit">
+              <option value="gongli">公里</option>
+              <option value="li" selected>里</option>
+              <option value="yingchi">英尺</option>
+              <option value="yingcu">英寸</option>
+              <option value="yingli">英里</option>
+              <option value="haili">海里</option>
+              <option value="ma">码</option>
+              <option value="mi">米</option>
+              <option value="fenmi">分米</option>
+              <option value="limi">厘米</option>
+              <option value="haomi">毫米</option>
+              <option value="weimi">微米</option>
+              <option value="nami">纳米</option>
+              <option value="zhang">丈</option>
+              <option value="chi">尺</option>
+              <option value="cun">寸</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+      <div data-role="collapsible">
+        <h3>面积</h3>
+        <ul class="area">
+          <li>
+            <input class="num" value='1' type="number" />
+            <select class="unit">
+              <option value="">平方公里</option>
+              <option value="">平方米</option>
+              <option value="">公顷</option>
+              <option value="">亩</option>
+              <option value="">平方厘米</option>
+              <option value="">平方英里</option>
+              <option value="">平方竿</option>
+              <option value="">平方英尺</option>
+            </select>
+            <a href="#" class="calc" data-role="button" data-inline="true" data-theme="b">换算</a>
+            <span class="result"></span>
+            <select class="toUnit">
+              <option value="">平方公里</option>
+              <option value="" selected>平方米</option>
+              <option value="">公顷</option>
+              <option value="">亩</option>
+              <option value="">平方厘米</option>
+              <option value="">平方英里</option>
+              <option value="">平方竿</option>
+              <option value="">平方英尺</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+      <div data-role="collapsible">
+        <h3>体积和容量</h3>
+        <ul class="vol">
+          <li>
+            <input class="num" value='1' type="number" />
+            <select class="unit">
+              <option value="">立方米</option>
+              <option value="">立方厘米</option>
+              <option value="" selected>升</option>
+              <option value="">毫升</option>
+              <option value="">夸脱</option>
+              <option value="">品脱</option>
+              <option value="">配克</option>
+              <option value="">液体盎司</option>
+            </select>
+            <a href="#" class="calc" data-role="button" data-inline="true" data-theme="b">换算</a>
+            <span class="result"></span>
+            <select class="toUnit">
+              <option value="">立方米</option>
+              <option value="">立方厘米</option>
+              <option value="">升</option>
+              <option value="" selected>毫升</option>
+              <option value="">夸脱</option>
+              <option value="">品脱</option>
+              <option value="">配克</option>
+              <option value="">液体盎司</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+      <div data-role="collapsible">
+        <h3>重量</h3>
+        <ul class="weight">
+          <li>
+            <input class="num" value='1' type="number" />
+            <select class="unit">
+              <option value="">吨</option>
+              <option value="" selected>公斤</option>
+              <option value="">千克</option>
+              <option value="">克</option>
+              <option value="">毫克</option>
+              <option value="">斤</option>
+              <option value="">两</option>
+              <option value="">钱</option>
+              <option value="">磅</option>
+              <option value="">盎司</option>
+            </select>
+            <a href="#" class="calc" data-role="button" data-inline="true" data-theme="b">换算</a>
+            <span class="result"></span>
+            <select class="toUnit">
+              <option value="">吨</option>
+              <option value="">公斤</option>
+              <option value="">千克</option>
+              <option value="">克</option>
+              <option value="">毫克</option>
+              <option value="" selected>斤</option>
+              <option value="">两</option>
+              <option value="">钱</option>
+              <option value="">磅</option>
+              <option value="">盎司</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+      <div data-role="collapsible">
+        <h3>其它</h3>
+        <ul class="temperature">
+          <li>
+            1 摄氏度 = 33.8 华氏度
+          </li>
+          <li>
+            1 标准大气压 = 101325 帕斯卡
+          </li>
+          <li>
+            1 标准大气压 = 760 毫米汞柱
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+
+    </div>
+</div>
+
+</body>
+<script type="text/javascript" src="js/js/jquery.js"></script>
+<script type="text/javascript" src="js/js/jqm.js"></script>
+<script type="text/javascript" src="js/js/unitConverter.js"></script>
+</html>
