@@ -5,7 +5,7 @@ favTools
 
 截图：
 <img src="/screenshot/1.jpg">
-<img src="/screenshot/2.jpg">
+<img src="/screenshot/2.jpg"><br />
 <img src="/screenshot/3.jpg">
 <img src="/screenshot/4.jpg">
 
